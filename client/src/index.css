@@ -1,0 +1,380 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+body {
+  margin: 0;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}
+body{
+    background-color: hsl(0, 0%, 10%);
+}
+.to-do-list{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 100px;
+}
+h1{
+    font-size: 4rem;
+    color: white;
+}
+button{
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.add-button{
+    background-color: hsl(125, 47%, 54%);
+}
+.add-button:hover{
+    background-color: hsl(125, 47%, 44%);
+}
+.del-button{
+    background-color: hsl(10, 90%, 50%);
+}
+.del-button:hover{
+    background-color: hsl(10, 90%, 40%);
+}
+.move-button{
+    background-color: hsl(207, 90%, 64%);
+}
+.move-button:hover{
+    background-color: hsl(207, 90%, 54%);
+}
+input[type="text"]{
+    font-size: 1.6rem;
+    padding: 10px;
+    border: 2px solid hsla(0, 0%, 80%, 0.5);
+    border-radius: 5px;
+    color: hsla(0, 0%, 0%, 0.5);
+}
+ol{
+    padding: 0;
+}
+li{
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 15px;
+    background-color: hsl(0, 0%, 97%);
+    margin-bottom: 10px;
+    border: 3px solid hsla(0, 0%, 85%, 0.75);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.text{
+    flex: 1;
+}
+.del-button, .move-button{
+    padding: 8px 12px;
+    font-size: 1.4rem;
+    margin-left: 10px;
+}
+
+.to-do-list {
+    font-family: Arial, sans-serif;
+    max-width: 980px;
+    margin: 60px auto;
+    padding: 24px;
+}
+
+.to-do-list h1 {
+    margin-bottom: 24px;
+}
+
+.add-task-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+    margin-bottom: 24px;
+}
+
+.to-do-list input[type='text'] {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 10px 12px;
+}
+
+.to-do-list button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 10px 12px;
+    line-height: 1;
+}
+
+.tg-input-group {
+    text-align: left;
+}
+
+.tg-input-label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    letter-spacing: 0.02em;
+}
+
+.tg-input-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 44px;
+    background: hsl(0, 0%, 100%);
+    border: 1px solid hsl(214, 32%, 91%);
+    border-radius: 8px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tg-input-wrap:focus-within {
+    border-color: hsl(221, 83%, 53%);
+    box-shadow: 0 0 0 3px hsla(221, 83%, 53%, 0.15);
+}
+
+.tg-input-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    min-width: 44px;
+    color: hsl(215, 16%, 47%);
+}
+
+.tg-input {
+    height: 100%;
+    border: none;
+    outline: none;
+    border-radius: 0 8px 8px 0;
+    background: transparent;
+    color: hsl(222, 47%, 11%);
+    font-size: 0.96rem;
+    padding: 0 12px 0 0;
+}
+
+.tg-input::placeholder {
+    color: hsl(215, 16%, 55%);
+}
+
+.to-do-list ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.todo-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: center;
+    font-size: 1rem;
+    padding: 14px;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.task-title {
+    color: hsl(0, 0%, 10%);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.task-description {
+    color: hsl(0, 0%, 30%);
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+.todo-item.completed .task-title {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+    color: hsl(0, 0%, 40%);
+}
+
+.edit-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.edit-button {
+    background-color: hsl(220, 90%, 58%);
+}
+
+.edit-button:hover {
+    background-color: hsl(220, 90%, 50%);
+}
+
+.cancel-button {
+    background-color: hsl(0, 0%, 45%);
+}
+
+.cancel-button:hover {
+    background-color: hsl(0, 0%, 36%);
+}
+
+.move-button {
+    background-color: hsl(207, 90%, 64%);
+}
+
+.move-button:hover {
+    background-color: hsl(207, 90%, 54%);
+}
+
+.del-button {
+    background-color: hsl(10, 90%, 50%);
+}
+
+.del-button:hover {
+    background-color: hsl(10, 90%, 40%);
+}
+
+.todo-item input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .add-task-form {
+        grid-template-columns: 1fr;
+    }
+
+    .todo-item {
+        grid-template-columns: auto 1fr;
+    }
+
+    .task-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+    }
+}
+

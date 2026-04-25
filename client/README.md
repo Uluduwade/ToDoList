@@ -1,18 +1,50 @@
-# React + Vite
+# Frontend README
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This frontend is a React + Vite app for managing to-do items.
 
-Currently, two official plugins are available:
+## Prerequisites
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20+ recommended
+- npm
 
-## React Compiler
+Tested in this workspace with Node.js `v22.17.1`.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Setup
 
-Note: This will impact Vite dev & build performances.
+1. Open a terminal in the `client` folder.
+2. Install dependencies:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+If PowerShell blocks `npm` because of execution policy, use:
+
+```bash
+npm.cmd install
+```
+
+## Run The App
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+If needed on Windows PowerShell:
+
+```bash
+npm.cmd run dev
+```
+
+Vite usually serves the app at `http://localhost:5173`.
+
+## Frontend Assumptions And Limitations
+
+- The frontend is hardcoded to call the backend at `http://localhost:5000/api/tasks`.
+- The backend must be running before the UI can load or save tasks.
+- There is no frontend environment variable for the API base URL yet.
+- Task reordering with the Up/Down buttons only changes the order in the current browser state. It is not saved to MongoDB.
+- There is no authentication, user management, or route protection.
+- Error handling is minimal, so API failures are mostly logged to the browser console.

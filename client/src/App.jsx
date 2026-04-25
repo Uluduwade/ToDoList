@@ -1,4 +1,4 @@
-import ToDoList from './assets/ToDoList.js'
+import ToDoList from './assets/ToDoList.jsx'
 import Beams from './components/Beams.jsx';
 import './App.css';
 import ClickSpark from './components/ClickSpark.jsx';
